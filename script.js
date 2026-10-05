@@ -83,4 +83,4 @@ document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDel
 // Faol menyu
 const links = [...document.querySelectorAll('#menu a:not(.btn)')];
 const so = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.hash === '#' + e.target.id)); }), {rootMargin:'-45% 0px -50% 0px'});
-['bosh', 'yonalishlar', 'paketlar', 'haqimizda', 'aloqa'].forEach(id => so.observe(document.getElementById(id)));
+['bosh', 'yonalishlar', 'haqimizda', 'aloqa'].forEach(id => so.observe(document.getElementById(id)));
