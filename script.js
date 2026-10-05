@@ -18,7 +18,7 @@ const TOURS = [
  {n:'Ozarbayjon — Baku',f:'🇦🇿',d:'7 kecha',m:'Nonushta (BB)',p:490,img:'Flame Towers Baku.jpg',alt:'Bakudagi Alanga minoralari',t:'Baku — Kaspiy sohilidagi zamonaviy shahar: Alanga minoralari, Ichari Shahar va dengiz bo‘yi xiyoboni.'}
 ];
 const $ = (s, r = document) => r.querySelector(s);
-const FEAT = TOURS[4], DUBAI = TOURS[5];
+
 
 // Rasm yuklanmasa, gradient fon ko‘rinib turadi
 function load(el, file) { el.addEventListener('error', () => { el.style.opacity = 0; }, {once:true}); el.src = img(file); }
