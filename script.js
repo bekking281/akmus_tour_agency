@@ -1,21 +1,20 @@
 'use strict';
 // Rasmlar: barchasi shu yerda. Rasmni almashtirish uchun faqat URL ni o‘zgartiring (yoki assets/images/ ga joylab, "assets/images/dubay.jpg" deb yozing).
-const C = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
-const img = (f) => C + encodeURIComponent(f) + '?width=1200';
+const img = (f) => 'assets/images/' + f;
 const TOURS = [
- {n:'Turkiya',f:'🇹🇷',d:'7 kecha',m:'Nonushta (BB)',p:700,img:'Hagia Sophia Mars 2013.jpg',alt:'Istanbul: Ayasofya va shahar manzarasi',t:'Turkiya — tarixiy Istanbul, Kappadokiya vodiylari va Antalya sohillari bilan mashhur. Madaniyat va dengiz dam olishini uyg‘unlashtiradi.'},
- {n:'Vyetnam — Nyachang',f:'🇻🇳',d:'7+1 kecha',m:'Nonushta (BB)',p:850,img:'Nha Trang beach.jpg',alt:'Nyachang sohili va Vyetnam dengizi',t:'Nyachang — uzun qumli plyajlar, iliq dengiz va orolga sayohatlar bilan tanilgan Vyetnam kurorti.'},
- {n:'Vyetnam — Fukuok',f:'🇻🇳',d:'7 kecha',m:'Nonushta (BB)',p:520,img:'Phu Quoc beach.jpg',alt:'Fukuok orolidagi tropik plyaj',t:'Fukuok — tinch plyajlari, tropik tabiati va dengiz mahsulotlari bilan mashhur Vyetnam oroli.'},
- {n:'Misr — Sharm el-Sheyx',f:'🇪🇬',d:'7 kecha',m:'All Inclusive',p:500,img:'Sharm El Sheikh.jpg',alt:'Sharm el-Sheyx va Qizil dengiz sohili',t:'Sharm el-Sheyx — Qizil dengiz sohilidagi kurort: marjon riflari, snorkling va yil bo‘yi iliq ob-havo.'},
- {n:'Maldiv orollari',f:'🇲🇻',d:'7 kecha',m:'Nonushta (BB)',p:850,img:'Maldives.jpg',alt:'Maldiv orollari va turkuaz okean',t:'Maldiv orollari — turkuaz lagunalar, oq qumli plyajlar va suv ustidagi bungalolar bilan mashhur orollar.'},
- {n:'Dubay',f:'🇦🇪',d:'7 kecha',m:'Nonushta (BB)',p:400,img:'Burj Khalifa.jpg',alt:'Dubay osmono‘par binolari va Burj Xalifa',t:'Dubay — zamonaviy arxitektura, hashamatli savdo markazlari, cho‘l manzaralari va Fors ko‘rfazi sohillari bilan mashhur.'},
- {n:'Langkavi + Kuala-Lumpur',f:'🇲🇾',d:'6+1 kecha',m:'Nonushta (BB)',p:1080,img:'Petronas Towers.jpg',alt:'Kuala-Lumpurdagi Petronas minoralari',t:'Langkavi orolining tropik plyajlarini va Kuala-Lumpurning Petronas minoralari joylashgan zamonaviy shahrini birga ko‘ring.'},
- {n:'Xitoy — Xaynan',f:'🇨🇳',d:'7+1 kecha',m:'Nonushta (BB)',p:720,img:'Sanya Hainan.jpg',alt:'Xaynan orolidagi tropik sohil',t:'Xaynan — «Xitoy Gavayisi» deb ataladigan tropik orol: iliq dengiz, plyajlar va yam-yashil tabiat.'},
- {n:'Xitoy — Guanchjou',f:'🇨🇳',d:'7 kecha',m:'Nonushta (BB)',p:1100,img:'Guangzhou skyline.jpg',alt:'Guanchjou zamonaviy shahar manzarasi',t:'Guanchjou — janubiy Xitoyning yirik shahri: zamonaviy osmono‘par binolar, an’anaviy oshxona va zamonaviy shahar hayoti.'},
- {n:'Tailand — Pattaya',f:'🇹🇭',d:'7+1 kecha',m:'Nonushta (BB)',p:645,img:'Pattaya beach.jpg',alt:'Pattaya sohili va shahar',t:'Pattaya — dengiz sohili, orol sayohatlari, ko‘ngilochar markazlar va jonli shahar hayoti bilan tanilgan kurort.'},
- {n:'Tailand — Phuket',f:'🇹🇭',d:'7 kecha',m:'Nonushta (BB)',p:675,img:'Phuket beach.jpg',alt:'Phuketdagi tropik plyaj',t:'Phuket — Tailandning eng katta oroli: go‘zal plyajlar, Andaman dengizi va yaqin orollarga sayohatlar.'},
- {n:'Gruziya — Tbilisi',f:'🇬🇪',d:'7 kecha',m:'Nonushta (BB)',p:750,img:'Tbilisi old town.jpg',alt:'Tbilisining eski shahri',t:'Tbilisi — tor ko‘chalari, issiq buloqlari, mehmondo‘st muhiti va gruzin oshxonasi bilan sevimli shahar.'},
- {n:'Ozarbayjon — Baku',f:'🇦🇿',d:'7 kecha',m:'Nonushta (BB)',p:490,img:'Flame Towers Baku.jpg',alt:'Bakudagi Alanga minoralari',t:'Baku — Kaspiy sohilidagi zamonaviy shahar: Alanga minoralari, Ichari Shahar va dengiz bo‘yi xiyoboni.'}
+ {n:'Turkiya',f:'🇹🇷',d:'7 kecha',m:'Nonushta (BB)',p:700,img:'turkey.jpg',alt:'Istanbul: Ayasofya va shahar manzarasi',t:'Turkiya — tarixiy Istanbul, Kappadokiya vodiylari va Antalya sohillari bilan mashhur. Madaniyat va dengiz dam olishini uyg‘unlashtiradi.'},
+ {n:'Vyetnam — Nyachang',f:'🇻🇳',d:'7+1 kecha',m:'Nonushta (BB)',p:850,img:'Nyachang.jpg',alt:'Nyachang sohili va Vyetnam dengizi',t:'Nyachang — uzun qumli plyajlar, iliq dengiz va orolga sayohatlar bilan tanilgan Vyetnam kurorti.'},
+ {n:'Vyetnam — Fukuok',f:'🇻🇳',d:'7 kecha',m:'Nonushta (BB)',p:520,img:'Fukuok.jpg',alt:'Fukuok orolidagi tropik plyaj',t:'Fukuok — tinch plyajlari, tropik tabiati va dengiz mahsulotlari bilan mashhur Vyetnam oroli.'},
+ {n:'Misr — Sharm el-Sheyx',f:'🇪🇬',d:'7 kecha',m:'All Inclusive',p:500,img:'Sharm el-Sheyx.jpg',alt:'Sharm el-Sheyx va Qizil dengiz sohili',t:'Sharm el-Sheyx — Qizil dengiz sohilidagi kurort: marjon riflari, snorkling va yil bo‘yi iliq ob-havo.'},
+ {n:'Maldiv orollari',f:'🇲🇻',d:'7 kecha',m:'Nonushta (BB)',p:850,img:'Maldiv.jpg',alt:'Maldiv orollari va turkuaz okean',t:'Maldiv orollari — turkuaz lagunalar, oq qumli plyajlar va suv ustidagi bungalolar bilan mashhur orollar.'},
+ {n:'Dubay',f:'🇦🇪',d:'7 kecha',m:'Nonushta (BB)',p:400,img:'Dubay.jpg',alt:'Dubay osmono‘par binolari va Burj Xalifa',t:'Dubay — zamonaviy arxitektura, hashamatli savdo markazlari, cho‘l manzaralari va Fors ko‘rfazi sohillari bilan mashhur.'},
+ {n:'Langkavi + Kuala-Lumpur',f:'🇲🇾',d:'6+1 kecha',m:'Nonushta (BB)',p:1080,img:'Langkavi+ Kuala-Lampur.jpg',alt:'Kuala-Lumpurdagi Petronas minoralari',t:'Langkavi orolining tropik plyajlarini va Kuala-Lumpurning Petronas minoralari joylashgan zamonaviy shahrini birga ko‘ring.'},
+ {n:'Xitoy — Xaynan',f:'🇨🇳',d:'7+1 kecha',m:'Nonushta (BB)',p:720,img:'Xaynan.jpg',alt:'Xaynan orolidagi tropik sohil',t:'Xaynan — «Xitoy Gavayisi» deb ataladigan tropik orol: iliq dengiz, plyajlar va yam-yashil tabiat.'},
+ {n:'Xitoy — Guanchjou',f:'🇨🇳',d:'7 kecha',m:'Nonushta (BB)',p:1100,img:'Guanchjou.jpg',alt:'Guanchjou zamonaviy shahar manzarasi',t:'Guanchjou — janubiy Xitoyning yirik shahri: zamonaviy osmono‘par binolar, an’anaviy oshxona va zamonaviy shahar hayoti.'},
+ {n:'Tailand — Pattaya',f:'🇹🇭',d:'7+1 kecha',m:'Nonushta (BB)',p:645,img:'Pattaya.jpg',alt:'Pattaya sohili va shahar',t:'Pattaya — dengiz sohili, orol sayohatlari, ko‘ngilochar markazlar va jonli shahar hayoti bilan tanilgan kurort.'},
+ {n:'Tailand — Phuket',f:'🇹🇭',d:'7 kecha',m:'Nonushta (BB)',p:675,img:'Phuket.jpg',alt:'Phuketdagi tropik plyaj',t:'Phuket — Tailandning eng katta oroli: go‘zal plyajlar, Andaman dengizi va yaqin orollarga sayohatlar.'},
+ {n:'Gruziya — Tbilisi',f:'🇬🇪',d:'7 kecha',m:'Nonushta (BB)',p:750,img:'Tbilisi.jpg',alt:'Tbilisining eski shahri',t:'Tbilisi — tor ko‘chalari, issiq buloqlari, mehmondo‘st muhiti va gruzin oshxonasi bilan sevimli shahar.'},
+ {n:'Ozarbayjon — Baku',f:'🇦🇿',d:'7 kecha',m:'Nonushta (BB)',p:490,img:'Baku.jpg',alt:'Bakudagi Alanga minoralari',t:'Baku — Kaspiy sohilidagi zamonaviy shahar: Alanga minoralari, Ichari Shahar va dengiz bo‘yi xiyoboni.'}
 ];
 const $ = (s, r = document) => r.querySelector(s);
 
