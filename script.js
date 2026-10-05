@@ -82,5 +82,25 @@ document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDel
 
 // Faol menyu
 const links = [...document.querySelectorAll('#menu a:not(.btn)')];
-const so = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.hash === '#' + e.target.id)); }), {rootMargin:'-45% 0px -50% 0px'});
-['bosh', 'yonalishlar', 'haqimizda', 'aloqa'].forEach(id => so.observe(document.getElementById(id)));
+
+const sections = ['bosh', 'yonalishlar', 'haqimizda', 'aloqa']
+  .map(id => document.getElementById(id))
+  .filter(Boolean);
+
+const so = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      links.forEach(link => {
+        link.classList.toggle(
+          'active',
+          link.getAttribute('href') === '#' + entry.target.id
+        );
+      });
+    }
+  });
+}, {
+  rootMargin: '-35% 0px -55% 0px',
+  threshold: 0
+});
+
+sections.forEach(section => so.observe(section));
