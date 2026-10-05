@@ -22,7 +22,7 @@ const $ = (s, r = document) => r.querySelector(s);
 
 // Rasm yuklanmasa, gradient fon ko‘rinib turadi
 function load(el, file) { el.addEventListener('error', () => { el.style.opacity = 0; }, {once:true}); el.src = img(file); }
-load($('#heroImg'), 'Maldives.jpg'); load($('#featImg'), 'Maldives.jpg'); load($('#priceImg'), 'Burj Khalifa.jpg');
+load($('#heroImg'), 'Maldives.jpg'); load($('#priceImg'), 'Burj Khalifa.jpg');
 
 const grid = $('#grid');
 const hues = ['#8fe3ee,#2a8fd0','#ffd6a5,#ff9a62','#a8e6cf,#19b5c4','#bde0fe,#6fa8e8'];
